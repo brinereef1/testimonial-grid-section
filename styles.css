@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 75%;
+    background: hsl(210, 46%, 95%);
+}
+
+p {
+    color: hsl(0, 0%, 81%);
+    line-height: 1.5em;
+}
+
+h1, h4 {
+    color: white;
+}
+
+.grid-3-5 {
+    background: white;
+}
+
+.grid-3-5 p {
+    color: gray;
+}
+
+.grid-3-5 h1, .grid-3-5 h4 {
+    color: hsl(217, 19%, 35%) !important;
+}
+
+.bg-pattern {
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-color: hsl(263, 55%, 52%);
+    background-position: calc(100% - 10%) 0px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.container {
+    box-shadow: -5px 8px 45px -14px rgba(0,0,0,0.75);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+}
+
+.contain *, .name-pfp {
+    margin: 1rem 0
+}
+
+.name-pfp {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+
+@media screen and (min-width: 770px) {
+    .last-grid {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .grid-span {
+        grid-column: span 2;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 800px) and (min-width: 650px) {
+    .last-grid {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    main {
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
